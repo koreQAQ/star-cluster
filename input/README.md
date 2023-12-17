@@ -1,0 +1,2 @@
+original 表示原先的输入数据
+training 表示训练的输入数据
