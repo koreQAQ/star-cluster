@@ -12,7 +12,6 @@ def to_question_1(data_dict: dict) -> pd.DataFrame:
     original_final_time_list = list(combinations(time_list, 2))
     question_1_data = []
     for pair_time in original_final_time_list:
-        print(f'{pair_time} processing ...')
         original = pair_time[0]
         final = pair_time[1]
         df = pd.merge(data_dict[original], data_dict[final], on='id', suffixes=('_original', '_final'))
