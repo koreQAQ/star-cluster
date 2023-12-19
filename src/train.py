@@ -18,7 +18,7 @@ def run(fold, model):
     # 根据model参数选择模型
     clf = model_dispatcher.models[model]
     clf.fit(x_train, y_train)
-    preds = clf.predict(x_valid)
+    preds = clf.train_predict(x_valid)
     accuracy = metrics.accuracy_score(y_valid, preds)
     print(f"Fold={fold}, Accuracy={accuracy}")
     joblib.dump(clf, os.path.join(config.MODEL_OUTPUT, f"dt_{fold}.bin"))
